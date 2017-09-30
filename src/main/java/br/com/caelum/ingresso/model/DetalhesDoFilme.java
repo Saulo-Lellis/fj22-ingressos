@@ -91,15 +91,5 @@ public class DetalhesDoFilme {
 	public void setAvaliacao(double avaliacao) {
 		this.avaliacao = avaliacao;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 }

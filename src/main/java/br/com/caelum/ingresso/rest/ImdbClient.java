@@ -16,7 +16,7 @@ public class ImdbClient {
 	
 	private Logger logger = Logger.getLogger(ImdbClient.class);
 	
-	public Optional<DetalhesDoFilme> request(Filme filme){
+	public <T> Optional<T> request(Filme filme, Class<T> tClass){
 		
 		RestTemplate client = new RestTemplate();
 		
@@ -27,8 +27,9 @@ public class ImdbClient {
 		
 		try{
 			
-			DetalhesDoFilme detalhesDoFilme = client.getForObject(url, DetalhesDoFilme.class);
-			return Optional.of(detalhesDoFilme);
+/*DetalhesDoFilme detalhesDoFilme = client.getForObject(url, DetalhesDoFilme.class);*/
+			
+			return Optional.of(client.getForObject(url, tClass));
 		
 		}catch (RestClientException e){
 			
